@@ -5,7 +5,8 @@
 View fleetwood password from your task/menu bar after connected to GDN network.
 
 
-Build for your platform (make sure rust and node already installed in your system)
+### Build for your platform (MacOS/Windows/Linux)
+make sure rust and node already installed in your system
 ```sh
 npm install
 npm run tauri build
