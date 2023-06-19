@@ -9,8 +9,9 @@ fn main() {
     let tray_menu = SystemTrayMenu::new().add_item(quit);
     let tray = SystemTray::new().with_menu(tray_menu);
     tauri::Builder::default()
-        .setup(|app| {
-            app.set_activation_policy(tauri::ActivationPolicy::Accessory);
+        .setup(|_app| {
+            #[cfg(target_os = "macos")]
+            _app.set_activation_policy(tauri::ActivationPolicy::Accessory);
             Ok(())
         })
         .plugin(tauri_plugin_positioner::init())
